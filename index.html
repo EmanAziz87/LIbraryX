@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Simulator</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        
+    </header>
+    <main>
+        <div class="form-container">
+            <form id="main-form">
+                <fieldset class="book-text-container">
+                    <div class="book-text-subcontainer">
+                        <label class="book-text-input-label" for="book-title">Title: </label>
+                        <input class="book-text-input" type="text" id="book-title" name="book-title">
+                    </div>
+    
+                    <div class="book-text-subcontainer">
+                        <label class="book-text-input-label" for="book-author">Author: </label>
+                        <input class="book-text-input" type="text" id="book-author" name="book-author">
+                    </div>
+    
+                    <div class="book-text-subcontainer">
+                        <label class="book-text-input-label" for="book-page-count">Pages: </label>
+                        <input class="book-text-input" type="number" id="book-page-count" name="book-page-count">
+                    </div>
+                </fieldset>
+
+                <fieldset class="book-read-container">
+                    <legend class="book-9read-legend">Have You Read It?</legend>  
+                    <div class="read-container">
+                        <label for="book-read-ya"></label>
+                        <input class= "yes-no-button" type="button" id="book-read-ya" name="book-read-ya" value="Yes">
+                    </div>
+                    
+                    <div class="read-container">
+                        <label for="book-read-no"></label>
+                        <input class= "yes-no-button" type="button" id="book-read-no" name="book-read-no" value="No">
+                    </div>
+                </fieldset>
+                <input class="submission-button" type="submit" value="Done">
+            </form>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    
+</body>
+</html>
