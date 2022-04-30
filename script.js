@@ -15,7 +15,6 @@ function addBookToLibrary() {
         //prevents refreshing of page after each submission
         e.preventDefault();
     });
-    
 }
 
 
