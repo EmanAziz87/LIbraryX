@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Simulator</title>
+    <title>LiBerry</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <aside>
+        <div class="logo-container">
+            <img class="blueberry-logo" src="images/blueberry.png" alt="blueberry logo">
+            <h1 class="LiBerry-title-main">LiBerry</h1>
+        </div>
+
+        <div class="add-remove-buttons">
+            <button class="add-book">Add Book</button>
+            <button class="remove-book">Remove Book</button>
+        </div>
     </aside>
     <main>
         <div class="form-div-container">
@@ -32,15 +45,15 @@
                 </fieldset>
 
                 <fieldset class="book-read-container">
-                    <legend class="book-read-legend">Have You Read It?</legend>  
+                    <legend class="book-read-legend"></legend>  
                     <div class="read-container">
-                        <label for="book-read-ya"></label>
-                        <input class= "yes-no-button" type="button" id="book-read-ya" name="book-read-ya" value="Yes">
+                        <label for="read"></label>
+                        <input class= "read" type="button" id="read" name="read" value="Read">
                     </div>
                     
                     <div class="read-container">
-                        <label for="book-read-no"></label>
-                        <input class= "yes-no-button" type="button" id="book-read-no" name="book-read-no" value="No">
+                        <label for="reading"></label>
+                        <input class= "reading" type="button" id="reading" name="read" value="Reading">
                     </div>
                 </fieldset>
                 <input class="submission-button" type="submit" value="Done">
