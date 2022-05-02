@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LiBerry</title>
+    <title>LiBerry | Personal Library</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,17 +30,17 @@
                 <fieldset class="book-input-containers">
                     <div class="book-input-container">
                         <label class="book-text-input-label" for="book-title">Title: </label>
-                        <input class="book-input" type="text" id="book-title" name="book-title">
+                        <input class="book-input title-input" type="text" id="book-title" name="book-title">
                     </div>
     
                     <div class="book-input-container">
                         <label class="book-text-input-label" for="book-author">Author: </label>
-                        <input class="book-input" type="text" id="book-author" name="book-author">
+                        <input class="book-input author-input" type="text" id="book-author" name="book-author">
                     </div>
     
                     <div class="book-input-container">
                         <label class="book-text-input-label" for="book-page-count">Pages: </label>
-                        <input class="book-input" type="number" id="book-page-count" name="book-page-count">
+                        <input class="book-input page-count-input" type="number" id="book-page-count" name="book-page-count">
                     </div>
                 </fieldset>
 
@@ -48,12 +48,12 @@
                     <legend class="book-read-legend"></legend>  
                     <div class="read-container">
                         <label for="read"></label>
-                        <input class= "read" type="button" id="read" name="read" value="Read">
+                        <input class= "read-button read" type="button" id="read" name="read" value="Read">
                     </div>
                     
                     <div class="read-container">
                         <label for="reading"></label>
-                        <input class= "reading" type="button" id="reading" name="read" value="Reading">
+                        <input class="read-button reading" type="button" id="reading" name="read" value="Reading">
                     </div>
                 </fieldset>
                 <input class="submission-button" type="submit" value="Done">
