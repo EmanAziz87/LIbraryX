@@ -15,11 +15,10 @@ body {
 main {
     height: 100vh;
     width: 100%;
-    display: flex;
-    background-color: rgb(25, 45, 99);
+    background-color: rgb(54, 74, 173);
     position: relative;
-    flex-wrap: wrap;
-    gap: 1px;
+    display: flex;
+    justify-content: center;
 }
 
 button, input, select, textarea {
@@ -204,9 +203,18 @@ aside button:hover {
 
 /* CARD */
 .card {
-    background-color: pink;
+    background-color: rgb(134, 154, 255);
     width: 220px;
     height: 270px;
     border-radius: 12px;
-    border: 3px solid rgb(214, 2, 2);
+    box-shadow: 1px 1px 8px 0.1px;
+}
+
+#card-container {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 25px;
+    margin-top: 25px;
 }
