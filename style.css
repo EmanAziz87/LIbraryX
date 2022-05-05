@@ -65,12 +65,27 @@ fieldset {
     border: none;
 }
 
+.close-form {
+    color: rgb(219, 219, 219);
+    font-weight: 1000;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.close-form:hover {
+    color: rgb(255, 38, 0);
+    cursor: pointer;
+}
+
 .book-input-containers {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 25px;
     max-width: 300px;
+    margin-top: 20px;
 }
 
 .book-input-container {
