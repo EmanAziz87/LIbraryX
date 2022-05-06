@@ -7,6 +7,10 @@ const addBookButton = document.querySelector('.add-book');
 const formWindow = document.querySelector('.form-div-container');
 const dimPage = document.querySelector('.page-dim');
 const formWindowClose = document.querySelector('.close-form');
+const cardContainer = document.querySelector('#card-container');
+const editMode = document.querySelector('.edit-mode');
+const deleteCardButton = document.querySelector('.delete-card-button'); 
+
 
 let read = false;
 let myLibrary = [];
@@ -28,7 +32,7 @@ function Book(title, author, pages, read) {
     this.read = read
 }
 
-function addBookToLibrary() {
+function bookFormSubmission() {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         const titleInput = document.getElementById('book-title').value;
@@ -42,7 +46,7 @@ function addBookToLibrary() {
             form.reset();
             formWindow.style.cssText = 'display: none;';
             dimPage.style.cssText = 'display:none;'
-
+            displayBookCards();
             console.log(myLibrary);
         }
     });
@@ -60,10 +64,56 @@ formWindowClose.addEventListener('click', () => {
     form.reset();
 });
 
-
-function displayCard() {
-
+if (myLibrary.length > 0) {
+    editMode.addEventListener('click', () => {
+        deleteCardButton.style.display = 'display: null;';
+    });
 }
 
-addBookToLibrary();
+
+
+function displayBookCards() {
+    for (let i = myLibrary.length-1; i < myLibrary.length; i++) {
+        const newCard = document.createElement('div');
+        const newCardContents = document.createElement('div');
+        const newCardExit = document.createElement('button');
+        
+        const titleContent = document.createElement('p');
+        const authorContent = document.createElement('p');
+        const pagesContent = document.createElement('p');
+        const readOrNotContent = document.createElement('p');
+
+        newCardExit.textContent = 'X';
+        cardContainer.appendChild(newCard);
+
+        newCard.className = 'card'; 
+        newCardContents.className = 'card-subcontainer'; 
+        newCardExit.className = 'delete-card-button'; 
+        titleContent.className = 'title';
+        authorContent.className = 'author';
+        pagesContent.className = 'page-count';
+        readOrNotContent.className = 'read-or-reading';
+
+        newCard.appendChild(newCardExit);
+        newCard.appendChild(newCardContents);
+        
+        newCardContents.appendChild(titleContent);
+        newCardContents.appendChild(authorContent);
+        newCardContents.appendChild(pagesContent);
+        newCardContents.appendChild(readOrNotContent);
+
+        titleContent.textContent = `Title: ${myLibrary[myLibrary.length - 1].title}`;
+        authorContent.textContent = `Author: ${myLibrary[myLibrary.length - 1].author}`;
+        pagesContent.textContent = `Pages: ${(myLibrary[myLibrary.length - 1].pages).toString()}`;
+        readOrNotContent.textContent = myLibrary[myLibrary.length - 1].read ? 'Read' : 'Reading';
+    }
+}
+bookFormSubmission();
+       
+        
+        
+
+
+
+
 
