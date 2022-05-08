@@ -217,6 +217,10 @@ aside button:hover {
     color: rgb(219, 219, 219);
 }
 
+.edit-mode {
+    
+}
+
 
 /* CARD */
 
@@ -263,7 +267,7 @@ aside button:hover {
 
 .delete-card-button:hover {
     top: 8px;
-    color: black;
+    color: rgb(255, 0, 0);
     font-size: 1.7rem;
     cursor: pointer;
 }
