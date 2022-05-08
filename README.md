@@ -7,6 +7,7 @@ It features a simplistic design, with just a side bar and a main window where yo
 
 Heres a gif of how it works!
 
-![liberry showcase 1](https://user-images.githubusercontent.com/90656124/167278576-d3600306-68fc-427d-afe7-99b496b527b9.gif)
+![liberry showcase 2](https://user-images.githubusercontent.com/90656124/167306844-3c0dc733-f633-4218-926f-93ad52525467.gif)
+
 ![liberry showcase 2](https://user-images.githubusercontent.com/90656124/167278578-50adc5b4-1836-48d7-9905-6e31ee7cf7fe.gif)
 
