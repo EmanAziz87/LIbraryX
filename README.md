@@ -7,7 +7,6 @@ The app is pretty simple. It features a simplistic design, with just a side bar 
 
 Heres a gif of how it works!
 
-<iframe src="https://giphy.com/embed/kuv9BRGZ4RSyKDNGZ1" width="480" height="428" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/kuv9BRGZ4RSyKDNGZ1">via GIPHY</a></p>
-
-<iframe src="https://giphy.com/embed/i8haZQJxa8dtqOdfWt" width="480" height="428" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/i8haZQJxa8dtqOdfWt">via GIPHY</a></p>
+![liberry showcase 1](https://user-images.githubusercontent.com/90656124/167278576-d3600306-68fc-427d-afe7-99b496b527b9.gif)
+![liberry showcase 2](https://user-images.githubusercontent.com/90656124/167278578-50adc5b4-1836-48d7-9905-6e31ee7cf7fe.gif)
 
