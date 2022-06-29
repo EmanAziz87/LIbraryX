@@ -1,0 +1,28 @@
+{
+    "name": "liberry",
+    "version": "1.0.0",
+    "description": "A place to store to your reading list and keep track of the books you've read or would like to read.",
+    "main": "script.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "webpack serve --open",
+        "build": "webpack"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EmanAziz87/LiBerry.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/EmanAziz87/LiBerry/issues"
+    },
+    "homepage": "https://github.com/EmanAziz87/LiBerry#readme",
+    "devDependencies": {
+        "css-loader": "^6.7.1",
+        "style-loader": "^3.3.1",
+        "webpack-cli": "^4.10.0",
+        "webpack-dev-server": "^4.9.2"
+    }
+}
