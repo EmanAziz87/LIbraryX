@@ -1,4 +1,4 @@
-import general from './components/scripts/general.js';
+import app from './components/scripts/app';
 import './components/style/style.css';
 
-general();
+app();

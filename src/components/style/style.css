@@ -8,21 +8,42 @@
 body {
     font-family: sans-serif;
     font-size: 16px;
-    position: relative; 
+    position: relative;
     display: flex;
 }
 
 main {
     height: 100vh;
     width: 100%;
-    background-color: rgb(54, 74, 173);
     position: relative;
     display: flex;
     justify-content: center;
 }
 
-button, input, select, textarea {
+.main-hover-state {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+button,
+input,
+select,
+textarea {
     font-family: inherit;
+}
+
+.add-books-prompt {
+    position: fixed;
+    top: 50%;
+    font-size: 36px;
+    font-weight: bold;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    opacity: 0;
+}
+
+.add-books-prompt-hover {
+    opacity: 0.5;
 }
 
 /*FORM CONTAINER*/
@@ -47,8 +68,6 @@ button, input, select, textarea {
 }
 
 /* MAKES FORM CONTAINER DISAPPEAR */
-
-
 
 #main-form {
     display: flex;
@@ -101,9 +120,9 @@ fieldset {
 
 .book-input {
     background-color: rgb(134, 154, 255);
-    color:rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
     border: none;
-    text-align:center;
+    text-align: center;
 }
 
 .book-read-container {
@@ -123,7 +142,7 @@ fieldset {
 .book-read-container input {
     width: 100px;
     background-color: rgb(134, 154, 255);
-    color:rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
     margin-top: 8px;
     padding: 3px 6px;
     border: none;
@@ -131,12 +150,12 @@ fieldset {
 }
 
 .book-read-container input:hover {
-    background-color:rgb(15, 23, 65);
+    background-color: rgb(15, 23, 65);
     color: rgb(219, 219, 219);
 }
 
 .book-read-container input:focus {
-    background-color:rgb(15, 23, 65);
+    background-color: rgb(15, 23, 65);
     color: rgb(219, 219, 219);
     border: 3px solid rgb(219, 219, 219);
     padding: 0px 3px;
@@ -148,18 +167,17 @@ fieldset {
     font-weight: 800;
 }
 
-
 .submission-button {
     padding: 0 10px;
     margin-top: 30px;
     background-color: rgb(134, 154, 255);
-    color:rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
     padding: 4px 30px;
     border: none;
 }
 
 .submission-button:hover {
-    background-color:rgb(15, 23, 65);
+    background-color: rgb(15, 23, 65);
     color: rgb(219, 219, 219);
 }
 
@@ -168,32 +186,40 @@ fieldset {
 /* SIDEBAR */
 
 aside {
-    background-color:rgb(20, 21, 36);
+    background-color: #1f1f56;
     height: 100vh;
     width: 35%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    /* box-shadow: 1px 1px 10px rgb(228, 228, 228);
+    z-index: 1; */
+    position: relative;
 }
 
 .blueberry-logo {
     width: 100px;
     height: 100px;
-    margin-top: 10px;
+    transition: transform 0.2s ease-out 0.05s;
+}
+
+.blueberry-logo:hover {
+    transform: scale(1.1, 1.1);
 }
 
 .logo-container {
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-top: 15px;
 }
 
 .LiBerry-title-main {
-    color: rgb(219, 219, 219);
+    color: rgb(255, 255, 255);
 }
 
 .add-remove-buttons {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     margin-top: 80px;
     gap: 40px;
@@ -201,23 +227,20 @@ aside {
 
 aside button {
     border: none;
-    background-color:rgb(134, 154, 255);
-    color:rgb(11, 10, 12);
+    background-color: rgb(252, 253, 255);
+    color: rgb(11, 10, 12);
     padding: 10px 50px;
     font-size: 1.5rem;
     font-weight: 800;
-    border-radius: 2px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.15s ease-out, color 0.15s ease-out;
 }
 
 aside button:hover {
-    background-color:rgb(15, 23, 65);
+    background-color: rgb(15, 23, 65);
     color: rgb(219, 219, 219);
 }
-
-.edit-mode {
-    
-}
-
 
 /* CARD */
 
@@ -231,7 +254,7 @@ aside button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative
+    position: relative;
 }
 
 #card-container {

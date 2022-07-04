@@ -65,36 +65,24 @@ const general = () => {
             if (myLibrary.length > 0) {
                 editModeState = !editModeState;
                 if (editModeState) {
-                    document.querySelector(
-                        'aside > div > button.edit-mode'
-                    ).style.cssText = 'background-color: red;';
+                    document.querySelector('aside > div > button.edit-mode').style.cssText = 'background-color: red;';
                 } else {
-                    document.querySelector(
-                        'aside > div > button.edit-mode'
-                    ).style.cssText = 'background-color:';
+                    document.querySelector('aside > div > button.edit-mode').style.cssText = 'background-color:';
                 }
-                const deleteCardButton = cardContainer.querySelectorAll(
-                    '.delete-card-button'
-                );
+                const deleteCardButton = cardContainer.querySelectorAll('.delete-card-button');
                 deleteCardButton.forEach((element) => {
-                    element.style.cssText = `display: ${
-                        editModeState ? 'inline-block;' : 'none;'
-                    }`;
+                    element.style.cssText = `display: ${editModeState ? 'inline-block;' : 'none;'}`;
                     element.addEventListener('click', () => {
                         element.parentElement.remove();
                         myLibrary.splice(
                             myLibrary.findIndex(function (book) {
-                                return (
-                                    `Title: ${book.title}` ===
-                                    element.nextSibling.firstChild.textContent
-                                );
+                                return `Title: ${book.title}` === element.nextSibling.firstChild.textContent;
                             }),
                             1
                         );
                         if (myLibrary.length === 0) {
-                            document.querySelector(
-                                'aside > div > button.edit-mode'
-                            ).style.cssText = 'background-color:';
+                            document.querySelector('aside > div > button.edit-mode').style.cssText =
+                                'background-color:';
                             editModeState = false;
                         }
                     });
@@ -114,12 +102,7 @@ const general = () => {
             resetFormAndPushToArray();
 
             function resetFormAndPushToArray() {
-                const entry = new Book(
-                    titleInput,
-                    authorInput,
-                    pagesInput,
-                    read
-                );
+                const entry = new Book(titleInput, authorInput, pagesInput, read);
                 myLibrary.push(entry);
                 form.reset();
                 formWindow.style.cssText = 'display: none;';
@@ -159,18 +142,10 @@ const general = () => {
         newCardContents.appendChild(pagesContent);
         newCardContents.appendChild(readOrNotContent);
 
-        titleContent.textContent = `Title: ${
-            myLibrary[myLibrary.length - 1].title
-        }`;
-        authorContent.textContent = `Author: ${
-            myLibrary[myLibrary.length - 1].author
-        }`;
-        pagesContent.textContent = `Pages: ${myLibrary[
-            myLibrary.length - 1
-        ].pages.toString()}`;
-        readOrNotContent.textContent = myLibrary[myLibrary.length - 1].read
-            ? 'Read'
-            : 'Reading';
+        titleContent.textContent = `Title: ${myLibrary[myLibrary.length - 1].title}`;
+        authorContent.textContent = `Author: ${myLibrary[myLibrary.length - 1].author}`;
+        pagesContent.textContent = `Pages: ${myLibrary[myLibrary.length - 1].pages.toString()}`;
+        readOrNotContent.textContent = myLibrary[myLibrary.length - 1].read ? 'Read' : 'Reading';
     }
 
     addBookButtonToggle();
