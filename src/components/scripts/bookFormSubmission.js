@@ -28,7 +28,6 @@ const bookFormSubmission = () => {
             formWindow.style.cssText = 'display: none;';
             dimPage.style.cssText = 'display:none;';
             displayBookCards();
-            console.log(myLibrary);
         }
     });
 };
