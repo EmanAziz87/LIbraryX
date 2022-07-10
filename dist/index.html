@@ -25,65 +25,39 @@
         </aside>
         <main>
             <div class="form-div-container">
-                <form id="main-form">
-                    <div class="close-form">X</div>
-                    <fieldset class="book-input-containers">
-                        <div class="book-input-container">
-                            <label class="book-text-input-label" for="book-title">Title: </label>
-                            <input
-                                class="book-input title-input"
-                                type="text"
-                                id="book-title"
-                                name="book-title"
-                                required
-                            />
-                        </div>
+                <div class="form-contents-container">
+                    <form id="main-form">
+                        <div class="close-form">X</div>
+                        <fieldset class="book-input-containers">
+                            <label class="book-input-label" for="book-input"></label>
+                            <input class="book-input" type="text" id="book-input" name="book-input" required />
+                        </fieldset>
 
-                        <div class="book-input-container">
-                            <label class="book-text-input-label" for="book-author">Author: </label>
-                            <input
-                                class="book-input author-input"
-                                type="text"
-                                id="book-author"
-                                name="book-author"
-                                required
-                            />
-                        </div>
-
-                        <div class="book-input-container">
-                            <label class="book-text-input-label" for="book-page-count">Pages: </label>
-                            <input
-                                class="book-input page-count-input"
-                                type="number"
-                                id="book-page-count"
-                                name="book-page-count"
-                                required
-                            />
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="book-read-container">
-                        <legend class="book-read-legend"></legend>
-                        <div class="read-container">
-                            <label for="read">Read</label>
-                            <input class="read-button read" type="radio" id="read" name="read" value="Read" required />
-                        </div>
-
-                        <div class="read-container">
-                            <label for="reading">Reading</label>
-                            <input
-                                class="read-button reading"
-                                type="radio"
-                                id="reading"
-                                name="read"
-                                value="Reading"
-                                required
-                            />
-                        </div>
-                    </fieldset>
-                    <input class="submission-button" type="submit" value="Add" />
-                </form>
+                        <!-- <fieldset class="book-read-container">
+                            <legend class="book-read-legend"></legend>
+                            <div class="read-container">
+                                <label for="read">Read</label>
+                                <input class="read-button read" type="radio" id="read" name="read" value="Read" required />
+                            </div>
+    
+                            <div class="read-container">
+                                <label for="reading">Reading</label>
+                                <input
+                                    class="read-button reading"
+                                    type="radio"
+                                    id="reading"
+                                    name="read"
+                                    value="Reading"
+                                    required
+                                />
+                            </div>
+                        </fieldset> -->
+                        <input class="submission-button" type="submit" value="Search" />
+                    </form>
+                    <div class="search-results-container"></div>
+                </div>
             </div>
+
             <div id="card-container"></div>
             <script src="bundle.js" defer></script>
         </main>

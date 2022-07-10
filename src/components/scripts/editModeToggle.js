@@ -1,8 +1,8 @@
-import { myLibrary } from './bookFormSubmission';
+import { myLibrary } from './addBookForm';
 
 const editMode = document.querySelector('.edit-mode');
 const cardContainer = document.querySelector('#card-container');
-let editModeState = false;
+export let editModeState = false;
 
 const editModeToggle = () => {
     editMode.addEventListener('click', () => {

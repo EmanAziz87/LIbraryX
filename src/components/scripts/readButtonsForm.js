@@ -1,15 +1,15 @@
-const readButton = document.getElementById('read');
-const readingButton = document.getElementById('reading');
-let read = false;
+// const readButton = document.getElementById('read');
+// const readingButton = document.getElementById('reading');
+// let read = false;
 
-const readButtonsForm = () => {
-    readButton.addEventListener('click', () => {
-        read = true;
-    });
+// const readButtonsForm = () => {
+//     readButton.addEventListener('click', () => {
+//         read = true;
+//     });
 
-    readingButton.addEventListener('click', () => {
-        read = false;
-    });
-};
+//     readingButton.addEventListener('click', () => {
+//         read = false;
+//     });
+// };
 
-export default readButtonsForm;
+// export default readButtonsForm;

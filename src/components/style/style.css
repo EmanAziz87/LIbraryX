@@ -48,14 +48,8 @@ textarea {
 
 /*FORM CONTAINER*/
 
-#main-form input {
-    border-radius: 2px;
-    font-size: 18px;
-    font-weight: 800;
-}
-
 .form-div-container {
-    background-color: rgb(20, 21, 36);
+    background-color: rgb(255, 255, 255);
     display: none;
     justify-content: center;
     padding: 30px 10px;
@@ -65,15 +59,17 @@ textarea {
     left: 50%;
     transform: translateX(-50%);
     z-index: 4;
+    width: 700px;
+    height: 700px;
 }
 
 /* MAKES FORM CONTAINER DISAPPEAR */
 
 #main-form {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 12px;
 }
 
 fieldset {
@@ -101,28 +97,25 @@ fieldset {
     flex-wrap: wrap;
     gap: 25px;
     max-width: 300px;
-    margin-top: 20px;
 }
 
-.book-input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.book-text-input-label {
-    align-self: flex-start;
+.book-input-label {
+    align-self: center;
     margin-bottom: 3px;
-    color: rgb(219, 219, 219);
+    color: rgb(0, 0, 0);
     font-weight: 800;
-    font-size: 18px;
+    font-size: 28px;
+    text-align: center;
 }
 
 .book-input {
-    background-color: rgb(134, 154, 255);
+    background-color: #ffffff;
     color: rgb(0, 0, 0);
     border: none;
     text-align: center;
+    outline: 1px solid black;
+    border-radius: 12px;
+    width: 300px;
 }
 
 .book-read-container {
@@ -162,7 +155,7 @@ fieldset {
 }
 
 .book-read-container label {
-    color: rgb(219, 219, 219);
+    color: rgb(0, 0, 0);
     text-align: center;
     font-weight: 800;
 }
@@ -170,15 +163,49 @@ fieldset {
 .submission-button {
     padding: 0 10px;
     margin-top: 30px;
-    background-color: rgb(134, 154, 255);
+    background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     padding: 4px 30px;
     border: none;
+    border: 1px solid black;
 }
 
 .submission-button:hover {
-    background-color: rgb(15, 23, 65);
-    color: rgb(219, 219, 219);
+    background-color: black;
+    color: white;
+}
+
+.form-contents-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 600px;
+}
+
+.search-results-container {
+    height: 90%;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    overflow-y: scroll;
+    gap: 20px;
+    align-items: center;
+}
+
+.search-book-info-container {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-result-description {
+    display: none;
+}
+
+.search-result-pageCount {
+    display: none;
 }
 
 /*////////////////*/
