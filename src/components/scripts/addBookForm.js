@@ -1,6 +1,7 @@
 import displayBookCards from './displayBookCards';
 import { editModeState } from './editModeToggle';
-import retrieveBookInfo from './APIandSearchResults';
+import { retrieveBookInfo } from './APIandSearchResults';
+import { resetSearchResults } from './APIandSearchResults';
 
 const formWindow = document.querySelector('.form-div-container');
 const dimPage = document.querySelector('.page-dim');
@@ -33,14 +34,12 @@ const bookFormSubmission = () => {
         event.preventDefault();
         formOpenState = false;
         const mainSearchInput = document.getElementById('book-input').value;
+        resetSearchResults();
         resetFormAndPushToArray();
 
         function resetFormAndPushToArray() {
             const entry = new BookSearch(mainSearchInput);
             myLibrary.push(entry);
-            form.reset();
-            formWindow.style.cssText = 'display: none;';
-            dimPage.style.cssText = 'display:none;';
             console.log(myLibrary);
             retrieveBookInfo(myLibrary[myLibrary.length - 1].mainSearch);
             displayBookCards();
@@ -54,6 +53,7 @@ const closeFormWindow = () => {
         formWindow.style.cssText = 'display: none;';
         dimPage.style.cssText = 'display:none;';
         form.reset();
+        resetSearchResults();
     });
 
     document.addEventListener('click', (event) => {
@@ -62,6 +62,7 @@ const closeFormWindow = () => {
             formWindow.style.cssText = 'display: none;';
             dimPage.style.cssText = 'display:none;';
             form.reset();
+            resetSearchResults();
         }
     });
 };

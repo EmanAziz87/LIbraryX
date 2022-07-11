@@ -1,5 +1,4 @@
-const resultsContainer = document.querySelector('.search-results-container');
-
+export const resultsContainer = document.querySelector('.search-results-container');
 const apiKey = 'AIzaSyBX94ednIWwsJ6ut9evx4Zyb6uG95cnW8c';
 
 function BookVolumeInfo(cover, title, description, pages) {
@@ -13,7 +12,9 @@ let coversAndBookDetails = [];
 
 async function retrieveBookInfo(userSearch) {
     const properSearchFormat = userSearch.split(' ').join('+');
-    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${properSearchFormat}&key=${apiKey}`);
+    const response = await fetch(
+        `https://www.googleapis.com/books/v1/volumes?q=${properSearchFormat}&maxResults=38&key=${apiKey}`
+    );
     const bookInfo = await response.json();
     console.log(bookInfo);
     retrieveBookDetails(bookInfo);
@@ -53,18 +54,25 @@ function displayAllResults(cover, title, description, pages) {
 
     searchItemsContainer.classList.add('search-book-info-container');
     coverImage.classList.add('search-result-item', 'search-result-cover');
-    titleContainer.classList.add('search-result-cover', 'search-result-title');
+    titleContainer.classList.add('search-result-item', 'search-result-title');
     descriptionContainer.classList.add('search-result-item', 'search-result-description');
     pagesContainer.classList.add('search-result-item', 'search-result-pageCount');
 
-    searchItemsContainer.append(coverImage);
-    searchItemsContainer.append(titleContainer);
-    searchItemsContainer.append(descriptionContainer);
-    searchItemsContainer.append(pagesContainer);
+    searchItemsContainer.appendChild(coverImage);
+    searchItemsContainer.appendChild(titleContainer);
+    searchItemsContainer.appendChild(descriptionContainer);
+    searchItemsContainer.appendChild(pagesContainer);
 
     coverImage.src = cover;
     coverImage.style.cssText = 'width: 100px; height: 150px;';
     resultsContainer.append(searchItemsContainer);
 }
 
-export default retrieveBookInfo;
+function resetSearchResults() {
+    coversAndBookDetails = [];
+    while (resultsContainer.firstChild) {
+        resultsContainer.removeChild(resultsContainer.lastChild);
+    }
+}
+
+export { retrieveBookInfo, resetSearchResults };

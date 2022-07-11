@@ -59,7 +59,7 @@ textarea {
     left: 50%;
     transform: translateX(-50%);
     z-index: 4;
-    width: 700px;
+    width: 1000px;
     height: 700px;
 }
 
@@ -179,25 +179,33 @@ fieldset {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 600px;
+    width: 900px;
 }
 
 .search-results-container {
     height: 90%;
-    border: 1px solid black;
+    border: 3px solid black;
+    border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
     overflow-y: scroll;
-    gap: 20px;
-    align-items: center;
+    gap: 40px;
+    justify-content: center;
 }
 
 .search-book-info-container {
-    width: 200px;
+    margin-top: 10px;
     display: flex;
+    gap: 10px;
     flex-direction: column;
     align-items: center;
+    width: 140px;
+    height: 200px;
+}
+
+.search-result-title {
+    text-align: center;
+    font-weight: 700;
 }
 
 .search-result-description {
@@ -206,6 +214,23 @@ fieldset {
 
 .search-result-pageCount {
     display: none;
+}
+
+.search-result-cover {
+    border-radius: 5px;
+    border: 2px solid black;
+    transition: transform 0.2s ease-out 0.05s;
+}
+
+.search-result-cover:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.search-results-navigation {
+    display: flex;
+    gap: 10px;
+    font-size: 2rem;
+    align-self: center;
 }
 
 /*////////////////*/
