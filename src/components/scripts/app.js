@@ -1,16 +1,15 @@
 import { addBookButtonToggle, bookFormSubmission, closeFormWindow } from './addBookForm';
 import editModeToggle from './editModeToggle';
-// import readButtonsForm from './readButtonsForm';
 import addBooksPrompt from './addBooksPrompt';
-import retrieveBookInfo from './APIandSearchResults';
+import { searchResultsNav } from './APIandSearchResults';
 
 const app = () => {
-    // readButtonsForm();
     closeFormWindow();
     editModeToggle();
     addBookButtonToggle();
     bookFormSubmission();
     addBooksPrompt();
+    searchResultsNav();
 };
 
 export default app;

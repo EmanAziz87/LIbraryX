@@ -32,39 +32,16 @@
                             <label class="book-input-label" for="book-input"></label>
                             <input class="book-input" type="text" id="book-input" name="book-input" required />
                         </fieldset>
-
-                        <!-- <fieldset class="book-read-container">
-                            <legend class="book-read-legend"></legend>
-                            <div class="read-container">
-                                <label for="read">Read</label>
-                                <input class="read-button read" type="radio" id="read" name="read" value="Read" required />
-                            </div>
-    
-                            <div class="read-container">
-                                <label for="reading">Reading</label>
-                                <input
-                                    class="read-button reading"
-                                    type="radio"
-                                    id="reading"
-                                    name="read"
-                                    value="Reading"
-                                    required
-                                />
-                            </div>
-                        </fieldset> -->
                         <input class="submission-button" type="submit" value="Search" />
                     </form>
                     <div class="search-results-container"></div>
                     <div class="search-results-navigation">
-                        <div class="first-page">&lt;&lt;</div>
-                        <div class="previous-page">&lt;</div>
+                        <button class="previous-page">&lt;</button>
                         <div class="current-page">1</div>
-                        <div class="next-page">&gt;</div>
-                        <div class="end-of-results">&gt;&gt;</div>
+                        <button class="next-page">&gt;</button>
                     </div>
                 </div>
             </div>
-
             <div id="card-container"></div>
             <script src="bundle.js" defer></script>
         </main>

@@ -58,8 +58,9 @@ textarea {
     align-self: center;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 4;
-    width: 1000px;
+    z-index: 3;
+    width: 80%;
+    min-width: 500px;
     height: 700px;
 }
 
@@ -180,6 +181,7 @@ fieldset {
     flex-direction: column;
     gap: 20px;
     width: 900px;
+    align-items: center;
 }
 
 .search-results-container {
@@ -191,6 +193,7 @@ fieldset {
     overflow-y: scroll;
     gap: 40px;
     justify-content: center;
+    width: 90%;
 }
 
 .search-book-info-container {
@@ -227,12 +230,10 @@ fieldset {
 }
 
 .search-results-navigation {
-    display: flex;
+    display: none;
     gap: 10px;
     font-size: 2rem;
-    align-self: center;
 }
-
 /*////////////////*/
 
 /* SIDEBAR */

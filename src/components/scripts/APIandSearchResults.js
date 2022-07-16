@@ -1,5 +1,15 @@
+import { resetFormAndPushToArray } from './addBookForm';
+import { formOpenState } from './addBookForm';
+const formWindow = document.querySelector('.form-div-container');
+
 export const resultsContainer = document.querySelector('.search-results-container');
 const apiKey = 'AIzaSyBX94ednIWwsJ6ut9evx4Zyb6uG95cnW8c';
+const previousPageButton = document.querySelector('.previous-page');
+const currentPageIndicator = document.querySelector('.current-page');
+const bookPreviewCard = document.querySelector('.book-preview-card');
+const nextPageButton = document.querySelector('.next-page');
+let currentSearchIndex = 0;
+let currentDisplayedPage = 1;
 
 function BookVolumeInfo(cover, title, description, pages) {
     this.cover = cover;
@@ -13,7 +23,7 @@ let coversAndBookDetails = [];
 async function retrieveBookInfo(userSearch) {
     const properSearchFormat = userSearch.split(' ').join('+');
     const response = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=${properSearchFormat}&maxResults=38&key=${apiKey}`
+        `https://www.googleapis.com/books/v1/volumes?q=${properSearchFormat}&maxResults=40&startIndex=${currentSearchIndex.toString()}&key=${apiKey}`
     );
     const bookInfo = await response.json();
     console.log(bookInfo);
@@ -36,7 +46,6 @@ function retrieveBookDetails(bookInfo) {
     }
 
     coversAndBookDetails.forEach((book) => {
-        console.log(book.pages);
         displayAllResults(book.cover, book.title, book.description, book.pages);
     });
 }
@@ -66,6 +75,33 @@ function displayAllResults(cover, title, description, pages) {
     coverImage.src = cover;
     coverImage.style.cssText = 'width: 100px; height: 150px;';
     resultsContainer.append(searchItemsContainer);
+
+    displayPreviewCard(searchItemsContainer, coverImage);
+}
+
+function displayPreviewCard(searchContainer, coverNode) {
+    coverNode.addEventListener('dragstart', (event) => {
+        if (event.path[0]) {
+        }
+    });
+}
+
+function searchResultsNav() {
+    nextPageButton.addEventListener('click', () => {
+        currentDisplayedPage += 1;
+        currentPageIndicator.textContent = currentDisplayedPage;
+        currentSearchIndex += 40;
+        resetFormAndPushToArray();
+    });
+
+    previousPageButton.addEventListener('click', () => {
+        if (currentSearchIndex >= 40) {
+            currentSearchIndex -= 40;
+            currentDisplayedPage -= 1;
+            currentPageIndicator.textContent = currentDisplayedPage;
+            resetFormAndPushToArray();
+        }
+    });
 }
 
 function resetSearchResults() {
@@ -73,6 +109,15 @@ function resetSearchResults() {
     while (resultsContainer.firstChild) {
         resultsContainer.removeChild(resultsContainer.lastChild);
     }
+    resetCurrentSearchIndex();
 }
 
-export { retrieveBookInfo, resetSearchResults };
+function resetCurrentSearchIndex() {
+    if (!formOpenState) {
+        currentSearchIndex = 0;
+        currentDisplayedPage = 1;
+        currentPageIndicator.textContent = currentDisplayedPage;
+    }
+}
+
+export { retrieveBookInfo, resetSearchResults, searchResultsNav };
